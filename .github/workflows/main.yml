@@ -31,7 +31,13 @@ jobs:
         echo "Hello Message 5"
         
     - name: List current Folder
-      run: ls -la                   
+      run: ls -la
+      
+    - name: Git clone my repo
+      uses: action/checkout@v3
+      
+    - name: List current Folder
+      run: ls -la      
   
   my_job2:
     runs-on: ubuntu-latest

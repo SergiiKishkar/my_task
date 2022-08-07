@@ -49,3 +49,9 @@ jobs:
       
     - name: Printing Deployment Package
       run: echo "Deploy Package name is ${{ env.PACKADGE_NAME }}"
+      
+    - name: Lets test some packges iof the are here ansible
+      run: ansible --version
+      
+    - name: Lets test some packges iof the are here python
+      run: python --version

@@ -15,11 +15,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       # - uses: actions/checkout@v3
   
-    - name: Print Hello Nessage
+    - name: Print Hello Message Job1 
       run: echo Hello, world Job1!
   
   my_job2:
     runs-on: ubuntu-latest
+    needs: [my_job1]
+    
     steps:
-    - name: Print Hello Nessage
+    - name: Print Hello Message Job2
       run: echo Hello, world Job2!

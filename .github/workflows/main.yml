@@ -29,7 +29,9 @@ jobs:
         echo "Application name: ${{ env.APPLICATION_NAME }}"
         echo "Hello Message 4"
         echo "Hello Message 5"
-                    
+        
+    - name: List current Folder
+      run: ls -la                   
   
   my_job2:
     runs-on: ubuntu-latest

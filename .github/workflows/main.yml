@@ -3,6 +3,10 @@
 # Sergii Kiskar August 2022
 #------------------------------
 name: GitHub-Action-Test
+env:
+   APPLICATION_NAME: "my-flask"
+   PACKADGE_NAME   : "flask-deploy-ver-${{ github.sha }}"
+   
 
 on:
   push:
@@ -17,6 +21,15 @@ jobs:
   
     - name: Print Hello Message Job1 
       run: echo Hello, world Job1!
+      
+    - name: Execte few commands
+      run: |
+        echo "Hello Message 1"
+        echo "Hello Message 2"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
+        echo "Hello Message 4"
+        echo "Hello Message 5"
+                    
   
   my_job2:
     runs-on: ubuntu-latest
@@ -25,3 +38,6 @@ jobs:
     steps:
     - name: Print Hello Message Job2
       run: echo Hello, world Job2!
+      
+    - name: Printing Deployment Package
+      run: echo "Deploy Package name is ${{ env.PACKADGE_NAME }}"

@@ -7,7 +7,6 @@ env:
    APPLICATION_NAME: "my-flask"
    PACKADGE_NAME   : "flask-deploy-ver-${{ github.sha }}"
    
-
 on:
   push:
     branches: [ "main" ]
@@ -27,8 +26,6 @@ jobs:
         echo "Hello Message 1"
         echo "Hello Message 2"
         echo "Application name: ${{ env.APPLICATION_NAME }}"
-        echo "Hello Message 4"
-        echo "Hello Message 5"
         
     - name: List current Folder
       run: ls -la
@@ -42,10 +39,21 @@ jobs:
   my_job2:
     runs-on: ubuntu-latest
     needs: [my_job1]
+    env:
+      VAR1: "This is Job Level Veriable 1"
+      VAR2: "This is Job Level Veriable 2"
     
     steps:
     - name: Print Hello Message Job2
       run: echo Hello, world Job2!
+      
+    - name: Print env vars
+      run: |
+        echo "var1 = ${{ env.VAR1 }}"
+        echo "var2 = ${{ env.VAR2 }}"
+        echo "var3 = $LOCAL_VAR"
+     env:
+       LOCAL_VAR: "This is Super Local VAR"
       
     - name: Printing Deployment Package
       run: echo "Deploy Package name is ${{ env.PACKADGE_NAME }}"

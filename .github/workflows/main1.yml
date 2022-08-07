@@ -2,7 +2,6 @@
 # Test GitHub Action
 # Sergii Kiskar August 2022
 #------------------------------
-
 name: push-control
 on: 
   push:

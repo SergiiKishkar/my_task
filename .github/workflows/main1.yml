@@ -21,4 +21,7 @@ jobs:
           echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
+      - name: List current Folder
+        run: ls -la
+      
           

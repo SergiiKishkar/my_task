@@ -30,6 +30,6 @@ jobs:
         run: |
           ls -la $HOME/
           sed 's/\[.*\]//' $HOME/files_modified.json > modi_file1.json
-          cat $HOME/modi_file1.json
+          # cat $HOME/modi_file1.json
       
           

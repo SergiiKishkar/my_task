@@ -32,3 +32,9 @@ jobs:
           cat $HOME/modi_file1.json
           ls -la $HOME/
           
+      - name: Starting Playboock
+        run: |
+          for val in $HOME/modi_file1.json; do
+          echo $val
+          done
+          

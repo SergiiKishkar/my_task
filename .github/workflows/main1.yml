@@ -15,9 +15,9 @@ jobs:
         uses: trilom/file-changes-action@v1.2.3
         with:
           # optional output format
-          output: ';'
+          output: ','
           # optional fileoutput format
-          fileOutput: ';'
+          fileOutput: ','
       - name: test
         run: |
           cat $HOME/files.json

@@ -20,9 +20,9 @@ jobs:
           fileOutput: 'csv'
       - name: test
         run: |
-          cat $HOME/files.txt
-          cat $HOME/files_modified.txt
-          cat $HOME/files_added.txt
+          cat $HOME/files.json
+          cat $HOME/files_modified.json
+          cat $HOME/files_added.json
           echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'

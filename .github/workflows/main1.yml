@@ -36,13 +36,13 @@ jobs:
         run: |
            for color in Blue Green Pink White Red
            do
-           # Print the string value
            echo "Color = $color"
            done  
 
       - name: Starting Playbook
         run: |
-          for val in $HOME/modi_file1.json; do
+          for val in $HOME/modi_file1.json
+          do
           echo $val
           done
           ls -la $HOME/

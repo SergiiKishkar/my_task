@@ -27,6 +27,9 @@ jobs:
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
       - name: List current Folder
-        run: ls -la $HOME/
+        run: |
+          ls -la $HOME/
+          sed 'S/\[//,g' $HOME/files_added.json ./$HOME/files_modified.json > modi_file1.json
+          cat $HOME/modi_file1.json
       
           

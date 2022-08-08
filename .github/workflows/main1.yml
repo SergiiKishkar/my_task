@@ -34,10 +34,14 @@ jobs:
 
       - name: test_vor
         run: |
-           for color in Blue Green Pink White Red
-           do
-           echo "Color = $color"
-           done  
+          DataList=" HTML5, CCS3, BootStrap, JQuery "
+          Field_Separator=$IFS 
+          IFS=,
+          for val in $DataList;
+          do
+          echo $val
+          done
+          IFS=$Field_Separator
 
       - name: Starting Playbook
         run: |

@@ -31,8 +31,16 @@ jobs:
         #  sed 's/a/b/' $HOME/files_modified.json > $HOME/modi_file1.json
         #  cat $HOME/modi_file1.json
         #  ls -la $HOME/
-          
-      - name: Starting Playboock
+
+      - name: test_vor
+        run: |
+           for color in Blue Green Pink White Red
+           do
+           # Print the string value
+           echo "Color = $color"
+           done  
+
+      - name: Starting Playbook
         run: |
           for val in $HOME/modi_file1.json; do
           echo $val

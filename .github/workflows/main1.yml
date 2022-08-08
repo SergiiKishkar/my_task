@@ -15,7 +15,7 @@ jobs:
         uses: trilom/file-changes-action@v1.2.3
         with:
           # optional output format
-          output: 'json'
+          output: ''
           # optional fileoutput format
           fileOutput: 'csv'
       - name: test

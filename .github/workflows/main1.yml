@@ -27,14 +27,14 @@ jobs:
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
       - name: List current Folder
-        run: |
-          sed 's/a/b/' $HOME/files_modified.json > $HOME/modi_file1.json
-          cat $HOME/modi_file1.json
-          ls -la $HOME/
+        # run: |
+        #  sed 's/a/b/' $HOME/files_modified.json > $HOME/modi_file1.json
+        #  cat $HOME/modi_file1.json
+        #  ls -la $HOME/
           
       - name: Starting Playboock
         run: |
           for val in $HOME/modi_file1.json; do
           echo $val
           done
-          
+          ls -la $HOME/

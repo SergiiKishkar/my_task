@@ -62,7 +62,7 @@ jobs:
           ext=${req_name_config##*.}
           # echo $req_name
           # echo $ext
-          if [ "ext" == "txt" ]
+          if [ `ext` == "txt" ]
           then
           echo "Starting Ansible...."
           else

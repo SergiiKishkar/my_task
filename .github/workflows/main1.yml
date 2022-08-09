@@ -35,10 +35,10 @@ jobs:
       - name: Git clone my repo
         uses: actions/checkout@v3
          
-      - name: test_ansible
-        run: |
-          cd $HOME/Ansible
-          ansible auto -m ping
+     # - name: test_ansible
+     #   run: |
+     #     cd $HOME/Ansible
+     #     ansible auto -m ping
 
       - name: Starting Playbook
         env:

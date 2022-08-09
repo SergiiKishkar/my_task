@@ -40,8 +40,6 @@ jobs:
           for val in $DataList;
           do
           echo $val
-          req_name=$(basename $val)
-          echo $req_name
           done
           IFS=$Field_Separator
 
@@ -55,6 +53,8 @@ jobs:
           for val in $(cat $HOME/file_install_req_mod.json);
           do
           echo "$val"
+          req_name=$(basename $val)
+          echo $req_name
           done
           IFS=$Field_Separator
           ls -la $HOME/

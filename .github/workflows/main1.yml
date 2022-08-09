@@ -40,6 +40,7 @@ jobs:
           ansible "127.0.0.1," -c local -m ping
           ansible "127.0.0.1," -c local -m setup
           
+          
       - name: Starting Playbook
         env:
           ext: "Ext of file of configuration"

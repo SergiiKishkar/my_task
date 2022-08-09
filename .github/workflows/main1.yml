@@ -56,7 +56,7 @@ jobs:
           req_name_config=$(basename $val)
           echo $req_name_config
           # req_name=$(sed -r "s/.+\/(.+)\..+/\1/" $(cat req_name_config))
-          req_name=cat $req_name_config | sed 's/.+\/(.+)\..+/\1/'
+          req_name=echo $req_name_config | sed 's/.+\/(.+)\..+/\1/'
           echo $req_name
           done
           IFS=$Field_Separator

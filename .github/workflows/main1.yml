@@ -34,7 +34,7 @@ jobs:
 
       - name: test_ansible
         run: |
-          cd Ansible
+          cd $HOME/Ansible
           ansible auto -m ping
 
       - name: Starting Playbook

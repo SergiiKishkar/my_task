@@ -45,8 +45,11 @@ jobs:
 
       - name: Starting Playbook
         run: |
+          Field_Separator=$IFS
+          IFS=.
           for val in $(cat $HOME/files_modified.json);
           do
           echo "$val"
           done
+          IFS=$Field_Separator
           ls -la $HOME/

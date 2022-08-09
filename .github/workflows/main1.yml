@@ -45,9 +45,7 @@ jobs:
 
       - name: Starting Playbook
         run: |
-          # cat $HOME/files_modified.json
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
-          # cat $HOME/file_install_req_mod.json
           Field_Separator=$IFS
           IFS=,
           for val in $(cat $HOME/file_install_req_mod.json);
@@ -56,7 +54,7 @@ jobs:
           req_name_config=$(basename $val)
           echo $req_name_config
           # req_name=$(sed -r "s/.+\/(.+)\..+/\1/" $(cat req_name_config))
-          req_name=echo $req_name_config | sed -r "s/.+\/(.+)\..+/\1/"
+          req_name=echo $req_name_config | sed -r 's/.+\/(.+)\..+/\1/'
           echo $req_name
           done
           IFS=$Field_Separator

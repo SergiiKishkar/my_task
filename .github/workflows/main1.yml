@@ -48,7 +48,7 @@ jobs:
           sed 's/\[//' $HOME/files_modified.json > $HOME/file_install_req_mod.json
           Field_Separator=$IFS
           IFS=.
-          for val in $(cat $HOME/file_install_req_mod.jso);
+          for val in $(cat $HOME/file_install_req_mod.json);
           do
           echo "$val"
           done

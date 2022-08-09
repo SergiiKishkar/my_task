@@ -62,7 +62,7 @@ jobs:
           # req_name=echo $req_name_config | sed -r 's/.+\/(.+)\..+/\1/'
           # ext=$(echo $req_name_config | sed -zi 's/\..*/\./')
           # ext=$(echo "$req_name_config" | sed -zi 's/\..*/\./')
-          ext="${a%%\.txt}"
+          ext="${req_name_config%%\.txt}"
           echo $req_name
           echo $ext
           done

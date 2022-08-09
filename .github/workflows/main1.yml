@@ -13,13 +13,45 @@ jobs:
     steps:
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
+        with:
+          # optional output format
+          output: 'json'
+          # optional fileoutput format
+          # fileOutput: 'csv'
       - name: test
         run: |
           cat $HOME/files.json
           cat $HOME/files_modified.json
           cat $HOME/files_added.json
-          cat $HOME/files_removed.json
           echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
-          echo '${{ steps.file_changes.outputs.files_removed}}'
+        # - name: List current Folder
+        # run: |
+        #  sed 's/a/b/' $HOME/files_modified.json > $HOME/modi_file1.json
+        #  cat $HOME/modi_file1.json
+        #  ls -la $HOME/
+
+      - name: test_vor
+        run: |
+          DataList=" HTML5, CCS3, BootStrap, JQuery "
+          Field_Separator=$IFS 
+          IFS=,
+          for val in $DataList;
+          do
+          echo $val
+          done
+          IFS=$Field_Separator
+
+      - name: Starting Playbook
+        run: |
+          sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_added.json > $HOME/file_install_req_mod.json
+          cat $HOME/file_install_req_mod.json
+          Field_Separator=$IFS
+          IFS=,
+          for val in $(cat $HOME/file_install_req_mod.json);
+          do
+          echo "$val"
+          done
+          IFS=$Field_Separator
+          ls -la $HOME/

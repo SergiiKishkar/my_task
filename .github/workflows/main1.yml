@@ -46,7 +46,7 @@ jobs:
       - name: Starting Playbook
         run: |
           FileList=$HOME/files_modified.json
-          for val in $Filelist;
+          for val in $(cat Filelist);
           do
           echo "$val"
           done

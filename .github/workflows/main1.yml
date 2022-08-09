@@ -37,7 +37,7 @@ jobs:
          
       - name: test_ansible
         run: |
-          ansible "127.0.0.1," -c local -m ping
+          # ansible "127.0.0.1," -c local -m ping
           ansible "127.0.0.1," -c local -m setup
 
 

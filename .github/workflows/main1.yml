@@ -40,6 +40,8 @@ jobs:
           for val in $DataList;
           do
           echo $val
+          req_name=$(basename $val)
+          echo $req_name
           done
           IFS=$Field_Separator
 

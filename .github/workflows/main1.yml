@@ -44,6 +44,11 @@ jobs:
           IFS=$Field_Separator
 
       - name: Starting Playbook
+        env:
+          ext: "Ext of file of configuration"
+          req_name: "Name of file requirements"
+          req_name_config: "file of configuration requirements"
+          
         run: |
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
           Field_Separator=$IFS

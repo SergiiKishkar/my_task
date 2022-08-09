@@ -45,10 +45,10 @@ jobs:
 
       - name: Starting Playbook
         run: |
-          sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
+          sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_added.json > $HOME/file_install_req_mod.json
           cat $HOME/file_install_req_mod.json
           Field_Separator=$IFS
-          IFS=.
+          IFS=,
           for val in $(cat $HOME/file_install_req_mod.json);
           do
           echo "$val"

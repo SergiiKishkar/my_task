@@ -47,7 +47,7 @@ jobs:
         run: |
           # cat $HOME/files_modified.json
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
-          cat $HOME/file_install_req_mod.json
+          # cat $HOME/file_install_req_mod.json
           Field_Separator=$IFS
           IFS=,
           for val in $(cat $HOME/file_install_req_mod.json);

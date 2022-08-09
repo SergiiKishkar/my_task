@@ -53,7 +53,9 @@ jobs:
           for val in $(cat $HOME/file_install_req_mod.json);
           do
           echo "$val"
-          req_name=$(basename $val)
+          req_name_config=$(basename $val)
+          echo $req_name_config
+          req_name=$(sed -r "s/.+\/(.+)\..+/\1/" $req_name_config)
           echo $req_name
           done
           IFS=$Field_Separator

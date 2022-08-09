@@ -45,7 +45,7 @@ jobs:
 
       - name: Starting Playbook
         run: |
-          sed 's/\[//' $HOME/files_modified.json > $HOME/file_install_req_mod.json
+          sed -e 's/\[//; s/\"//; s/\]//' $HOME/files_modified.json > $HOME/file_install_req_mod.json
           Field_Separator=$IFS
           IFS=.
           for val in $(cat $HOME/file_install_req_mod.json);

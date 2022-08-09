@@ -58,10 +58,7 @@ jobs:
           echo "$val"
           req_name_config=$(basename $val)
           echo $req_name_config
-          # req_name=$(sed -r "s/.+\/(.+)\..+/\1/" $(cat req_name_config))
-          # req_name=echo $req_name_config | sed -r 's/.+\/(.+)\..+/\1/'
-          # ext=$(echo $req_name_config | sed -zi 's/\..*/\./')
-          # ext=$(echo "$req_name_config" | sed -zi 's/\..*/\./')
+          req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
           echo $req_name
           echo $ext

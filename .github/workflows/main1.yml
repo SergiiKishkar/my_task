@@ -57,7 +57,7 @@ jobs:
           do
           echo "$val"
           req_name_config=$(basename $val)
-          # echo $req_name_config
+          echo $req_name_config
           req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
           # echo $req_name

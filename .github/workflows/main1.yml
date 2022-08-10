@@ -63,7 +63,7 @@ jobs:
           if [ "$ext" == "txt" ]
           then
           echo "Starting Ansible...."
-          ansible '127.0.0.1,' -c local -m ping
+          ansible localhost -m ping
           else
           echo "This is not configuration file"
           fi

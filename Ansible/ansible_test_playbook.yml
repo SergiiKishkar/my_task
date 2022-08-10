@@ -13,6 +13,12 @@
   - debug: 
       var: output
       
+  - name: Install Python
+    apt:
+      name: python3-pip
+      state: present
+      update_cache: true
+      
   - name: Creating a project folder
     file:
       path: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}

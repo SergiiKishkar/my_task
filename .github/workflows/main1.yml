@@ -1,7 +1,7 @@
 #------------------------------
 # Test GitHub Actions + Ansible
 # Sergii Kiskar August 2022
-# Detect modified and added files in the repository, create json-files
+# 
 # 
 #------------------------------
 name: repository-push-control

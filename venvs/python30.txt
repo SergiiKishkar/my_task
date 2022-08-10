@@ -1,1 +1,1 @@
-python30.txt
+dnspython==2.2.1

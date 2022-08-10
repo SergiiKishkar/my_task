@@ -5,6 +5,8 @@
 
   vars:
     mytext: "Hello from Ukraine"
+    ans_name_conf: "Name of Python Environment"
+    ans_file_conf: "configuration file for creating an environment"
     
   tasks:
   - name: Ping test
@@ -13,18 +15,12 @@
   - debug: 
       var: output
 
-  - name: Create Folder1
+  - name: Create Python Environment
     file:
-      path: /home/runner/work/my_task/my_task/my_test/folder1
+      path: /home/runner/work/my_task/my_task/{{ ans_name_conf }}
       state: directory
       mode: 0755
   
-  - name: Create Folder2
-    file:
-      path: /home/runner/work/my_task/my_task/my_test/folder2
-      state: directory
-      mode: 0755
-
   - name: Create File1
     copy:
       dest: /home/runner/work/my_task/my_task/my_test/file1

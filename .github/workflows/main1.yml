@@ -55,9 +55,10 @@ jobs:
           then
           echo "Starting Ansible...."
           cd /home/runner/work/my_task/my_task/Ansible
-          pwd
-          ansible localhost -m ping
-          ansible-playbook ansible_test_playbook.yml -i "127.0.0.1," -c local --extra-vars "ans_name_config=req_name_config"
+          echo $req_name
+          # ansible localhost -m ping
+          ansible-playbook ansible_test_playbook.yml -i "127.0.0.1," -c local 
+          #--extra-vars "ans_name=req_name"
           else
           echo "This is not configuration file"
           fi

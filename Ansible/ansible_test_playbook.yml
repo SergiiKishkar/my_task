@@ -1,0 +1,35 @@
+---
+- name: My Test Playbook
+  hosts: localhost
+  become: true
+
+  vars:
+    mytext: "Hello from Ukraine"
+    
+  tasks:
+  - name: Ping test
+    ping:
+    register: output
+  - debug: 
+      var: output
+
+  - name: Create Folder1
+    file:
+      path: /home/my_test/folder1
+      state: directory
+      mode: 0755
+  
+  - name: Create Folder2
+    file:
+      path: /home/my_test/folder2
+      state: directory
+      mode: 0755
+
+  - name: Create File1
+    copy:
+      dest: /home/my_test/file1
+      content: |
+        Text Line1, in file1
+        Text Line2, in file1
+        Text Line3, {{ mytext }}
+...

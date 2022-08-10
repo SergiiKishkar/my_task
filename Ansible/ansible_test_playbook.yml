@@ -30,7 +30,7 @@
 
   - name: Create Folder1
     file:
-      path: /home/runner/work/my_task/my_task/my_test/{{ $(ans_name_config) }}
+      path: /home/runner/work/my_task/my_task/my_test/"{{ ans_name_config }}"
       state: directory
       mode: 0755
   

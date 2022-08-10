@@ -4,10 +4,8 @@
   become: true
 
   vars:
-    mytext: "Hello from Ukraine"
-    ans_name_conf: "Name of Python Environment"
-    ans_file_conf: "configuration file for creating an environment"
-    
+    ans_name_conf: "Python environment name without extension" 
+        
   tasks:
   - name: Ping test
     ping:
@@ -15,34 +13,24 @@
   - debug: 
       var: output
       
-  - name: Check var
-    debug: 
-      msg: "имя переменной ансибл {{ ans_name_conf }} должно быть req"
-
-  - name: Create Folder of Projekt
+   - name: Creating a project folder
     file:
       path: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       state: directory
       mode: 0755
       
-  - name: Копирование файла конфигурации на удаленную машину
+  - name: Copying a configuration file to a remote machine
     copy:
-      src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt"
+      src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt" 
       dest: "/home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}"
       mode: 0555
       
-  - name: установка рабочей среды
+  - name: Setting the working environment and dependencies
     shell: | 
       cd /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       python3 -m venv {{ ans_name_conf }}
       pip install -r {{ ans_name_conf }}.txt
     
-  #- name: Вторая Проверка наличия файла конфигурации 
-  #  ansible.builtin.shell:
-  #   cmd: ls -la 
-  #   chdir: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}/ 
-      
-  
   - name: Create Folder2
     file:
       path: /home/runner/work/my_task/my_task/my_test/folder2
@@ -56,3 +44,4 @@
         Text Line1, in file1
         Text Line2, in file1
         Text Line3, {{ mytext }}
+...

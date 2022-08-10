@@ -25,11 +25,14 @@
       state: directory
       mode: 0755
       
-  - name: Copy MyHomePage to Servers
+  - name: Копирование файла конфигурации на удаленную машину
     copy:
       src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt"
       dest: "/home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}"
-      mode: 0555 
+      mode: 0555
+      
+  - name: Проверка наличия файла конфигурации
+    shell: ls -la  /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       
   
   - name: Create Folder2

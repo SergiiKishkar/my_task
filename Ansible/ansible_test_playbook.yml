@@ -26,11 +26,11 @@
   
   - name: Check var
     debug: 
-      msg: "имя переменной ансибл {{ ans_name_config }} должно быть req"
+      msg: "имя переменной ансибл {{ req_name }} должно быть req"
 
   - name: Create Folder1
     file:
-      path: /home/runner/work/my_task/my_task/my_test/{{ ans_name_config }}
+      path: /home/runner/work/my_task/my_task/my_test/{{ req_name }}
       state: directory
       mode: 0755
   

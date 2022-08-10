@@ -29,19 +29,5 @@
     shell: | 
       cd /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       python3 -m venv {{ ans_name_conf }}
-      pip install -r {{ ans_name_conf }}.txt
-    
-  - name: Create Folder2
-    file:
-      path: /home/runner/work/my_task/my_task/my_test/folder2
-      state: directory
-      mode: 0755
-
-  - name: Create File1
-    copy:
-      dest: /home/runner/work/my_task/my_task/my_test/file1
-      content: |
-        Text Line1, in file1
-        Text Line2, in file1
-        Text Line3, {{ mytext }}
+      pip install -r {{ ans_name_conf }}.txt  
 ...

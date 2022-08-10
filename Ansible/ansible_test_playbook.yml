@@ -30,7 +30,7 @@
 
   - name: Create Python Environment
     file:
-      path: /home/runner/work/my_task/my_task/ppp/
+      path: /home/runner/work/my_task/my_task/ppp
       state: directory
       mode: 0755
     

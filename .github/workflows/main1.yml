@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Git clone repository
         uses: actions/checkout@v3
-        
+                
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
         with:
@@ -27,44 +27,35 @@ jobs:
         run: |
           cat $HOME/files.json
           cat $HOME/files_modified.json
-          cat $HOME/files_added.json
-          echo '${{ steps.file_changes.outputs.files}}'
-          echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo '${{ steps.file_changes.outputs.files_added}}'
-         
+          cat $HOME/files_added.json        
 
       - name: Starting Playbook
         env:
           ext: "Ext of file of configuration"
           req_name: "Name of file requirements"
+          req_name_config:  "Name of file configuration"
                     
         run: |
+          # trim ',' and '[', ']' signs
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
           Field_Separator=$IFS
           IFS=,
+          # loop through json get file basename, ext and config name
           for val in $(cat $HOME/file_install_req_mod.json);
           do
-          echo "$val"
           req_name_config=$(basename $val)
           echo $req_name_config
           req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
-          # echo $req_name
-          echo $ext
+          # if file is .txt start ansible          
           if [ "$ext" == "txt" ]
           then
           echo "Starting Ansible...."
           cd /home/runner/work/my_task/my_task/Ansible
-          echo $req_name
           ansible-playbook ansible_test_playbook.yml -i "127.0.0.1," -c local --extra-vars "ans_name_conf=$req_name"
           else
           echo "This is not configuration file"
           fi
           done
           IFS=$Field_Separator
-          echo $HOME
-          ls -la /home/runner/work//my_task/my_task/my_test/test-project-$req_name
-          # ls -la /home/runner/
-          # ls -la /home
-          
-          
+         

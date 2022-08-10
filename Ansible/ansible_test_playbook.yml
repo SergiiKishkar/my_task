@@ -16,7 +16,7 @@
       var: output
 
   - name: Create Python Environment
-  - debug: 
+    debug: 
       var: ans_name_config
     file:
       path: /home/runner/work/my_task/my_task/{{ ans_name_config }}/

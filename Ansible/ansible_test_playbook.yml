@@ -30,7 +30,7 @@
 
   - name: Create a directory if it does not exist
     ansible.builtin.file:
-    path: $HOME/projekt_dir
+    path: /home/runner/work/my_task/my_task/Ansible//projekt_dir
     state: directory
     mode: '0755'
   

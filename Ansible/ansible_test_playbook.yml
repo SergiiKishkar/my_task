@@ -13,7 +13,7 @@
   - debug: 
       var: output
       
-   - name: Creating a project folder
+  - name: Creating a project folder
     file:
       path: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       state: directory

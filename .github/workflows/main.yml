@@ -27,8 +27,11 @@ jobs:
         run: |
           cat $HOME/files.json
           cat $HOME/files_modified.json
-          cat $HOME/files_added.json        
-
+          cat $HOME/files_added.json
+          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+          
       - name: Starting Playbook
         env:
           ext: "Ext of file of configuration"

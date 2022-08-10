@@ -21,7 +21,7 @@
 
   - name: Create Folder1
     file:
-      path: /home/runner/work/my_task/my_task/my_test/{{ ans_name_conf }}
+      path: /home/runner/work/my_task/my_task/my_test/test-project_{ ans_name_conf }}
       state: directory
       mode: 0755
   

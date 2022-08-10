@@ -3,7 +3,7 @@
 # Sergii Kiskar August 2022
 # 
 # 
-#------------------------------
+#-----------------------------
 name: repository-push-control
 on: 
   push:

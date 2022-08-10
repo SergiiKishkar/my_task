@@ -63,6 +63,7 @@ jobs:
           fi
           done
           IFS=$Field_Separator
+          echo $HOME
           ls -la $HOME/
           ls -la /home/runner/work/my_task/my_task
           ls -la /home/runner/work/my_task/my_task/Ansible

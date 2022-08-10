@@ -2,7 +2,7 @@
 # Test GitHub Actions + Ansible
 # Sergii Kiskar August 2022
 #------------------------------
-name: push-control
+name: repository-push-control
 on: 
   push:
     branches: [ "main" ]
@@ -11,7 +11,6 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
-    
       - name: Git clone my repo
         uses: actions/checkout@v3
         

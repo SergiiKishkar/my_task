@@ -25,12 +25,13 @@
       - Kolya 
 
   - name: Create Python Environment
+    debug: 
+      msg: "{{ ans_name_config }}"
     file:
       path: /home/runner/work/my_task/my_task/ppp/
       state: directory
       mode: 0755
-    debug: 
-      msg: "{{ ans_name_config }}"
+    
       
   - name: Create File1
     copy:

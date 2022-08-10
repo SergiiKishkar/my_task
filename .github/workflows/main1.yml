@@ -64,6 +64,7 @@ jobs:
           then
           echo "Starting Ansible...."
           ansible localhost -m ping
+          ansible-playbook localhost ansible_test_playbook.yml
           else
           echo "This is not configuration file"
           fi

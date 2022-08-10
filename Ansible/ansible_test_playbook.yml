@@ -33,6 +33,11 @@
       
   - name: Проверка наличия файла конфигурации
     shell: ls -la  /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
+    
+  - name: Вторая Проверка наличия файла конфигурации 
+    ansible.builtin.shell:
+      cmd: ls -la 
+      chdir: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}/ 
       
   
   - name: Create Folder2

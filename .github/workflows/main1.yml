@@ -1,5 +1,5 @@
 #------------------------------
-# Test GitHub Action
+# Test GitHub Actions + Ansible
 # Sergii Kiskar August 2022
 #------------------------------
 name: push-control
@@ -22,7 +22,7 @@ jobs:
           output: 'json'
           # optional fileoutput format
           # fileOutput: 'csv'
-      - name: test
+      - name: Detect # Detect modified and added files in the repository
         run: |
           cat $HOME/files.json
           cat $HOME/files_modified.json

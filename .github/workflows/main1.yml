@@ -70,11 +70,11 @@ jobs:
           fi
           done
           IFS=$Field_Separator
-          ls -la $HOME/
+          #ls -la $HOME/
           ls -la /home/runner/work/my_task/my_task
-          ls -la /home/runner/work/my_task/
-          ls -la /home/runner/work/
-          ls -la /home/runner/
-          ls -la /home
+          # ls -la /home/runner/work/my_task/
+          # ls -la /home/runner/work/
+          # ls -la /home/runner/
+          # ls -la /home
           
           

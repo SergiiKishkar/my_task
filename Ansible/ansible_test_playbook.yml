@@ -23,10 +23,12 @@
       - Petya
       - Masha
       - Kolya 
-
-  - name: Create Python Environment
+  
+  - name: Check var
     debug: 
       msg: "{{ ans_name_config }}"
+
+  - name: Create Python Environment
     file:
       path: /home/runner/work/my_task/my_task/ppp/
       state: directory

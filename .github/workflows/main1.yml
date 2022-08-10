@@ -1,6 +1,8 @@
 #------------------------------
 # Test GitHub Actions + Ansible
 # Sergii Kiskar August 2022
+# Detect modified and added files in the repository, create json-files
+# 
 #------------------------------
 name: repository-push-control
 on: 
@@ -11,7 +13,7 @@ jobs:
   changes:
     runs-on: ubuntu-latest
     steps:
-      - name: Git clone my repo
+      - name: Git clone repository
         uses: actions/checkout@v3
         
       - id: file_changes
@@ -35,8 +37,7 @@ jobs:
         env:
           ext: "Ext of file of configuration"
           req_name: "Name of file requirements"
-          req_name_config: "file of configuration requirements"
-          
+                    
         run: |
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
           Field_Separator=$IFS
@@ -55,7 +56,6 @@ jobs:
           echo "Starting Ansible...."
           cd /home/runner/work/my_task/my_task/Ansible
           echo $req_name
-          # ansible localhost -m ping
           ansible-playbook ansible_test_playbook.yml -i "127.0.0.1," -c local --extra-vars "ans_name_conf=$req_name"
           else
           echo "This is not configuration file"
@@ -63,10 +63,6 @@ jobs:
           done
           IFS=$Field_Separator
           echo $HOME
-          # ls -la $HOME/
-          ls -la /home/runner/work/my_task/my_task
-          # ls -la /home/runner/work/my_task/my_task/Ansible
-          ls -la /home/runner/work//my_task/my_task/my_test
           ls -la /home/runner/work//my_task/my_task/my_test/test-project-$req_name
           # ls -la /home/runner/
           # ls -la /home

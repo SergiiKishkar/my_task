@@ -17,7 +17,7 @@
 
   - name: Create Python Environment
     file:
-      path: /home/runner/work/my_task/my_task/{{ ans_name_conf }}
+      path: /home/runner/work/my_task/my_task/{{ ans_name_config }}
       state: directory
       mode: 0755
   

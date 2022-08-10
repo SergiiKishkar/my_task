@@ -19,11 +19,19 @@
     debug: 
       msg: "имя переменной ансибл {{ ans_name_conf }} должно быть req"
 
-  - name: Create Folder1
+  - name: Create Folder of Projekt
     file:
-      path: /home/runner/work/my_task/my_task/my_test/test-project_{{ ans_name_conf }}
+      path: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}
       state: directory
       mode: 0755
+      
+  - name: Copy MyHomePage to Servers
+    copy:
+      src: "{{ source_file }}"
+      dest: "/home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}"
+      mode: 0555
+    
+      
   
   - name: Create Folder2
     file:

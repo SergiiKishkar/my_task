@@ -67,7 +67,7 @@ jobs:
           ls -la $HOME/
           ls -la /home/runner/work/my_task/my_task
           ls -la /home/runner/work/my_task/my_task/Ansible
-          # ls -la /home/runner/work/
+          ls -la /home/runner/work//my_task/my_task/my_test
           # ls -la /home/runner/
           # ls -la /home
           

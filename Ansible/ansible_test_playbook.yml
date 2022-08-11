@@ -19,8 +19,8 @@
       state: present
       update_cache: yes
     register: results
-  - debug: 
-      var: results
+  # - debug: 
+  #    var: results
       
   - name: Install Ansible
     ansible.builtin.apt:
@@ -28,8 +28,8 @@
       state: present
       update_cache: yes
     register: results
-  - debug: 
-      var: results  
+  # - debug: 
+  #    var: results  
        
   - name: Creating a project folder
     file:

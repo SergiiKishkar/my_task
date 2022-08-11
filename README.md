@@ -6,7 +6,7 @@
  creates environments based on on changed files.
  
  Українська
- Тригером для Github Actions є push до репозиторію зміненого конфігураційного файлу txt формата. Тригер реагує тільки на модифіковані , а не на нові файли. Розширення   файлу повинно бути формату txt, а не Txt, чи tXt. Назва файла конфігурації включена в назву проекту та назку віртуального середовища Python. Для коректного використання  Ansible потрібно налаштувати файл inventory - hosts.ini. Кількість розгорнутих видалених хостів дорівнює кількості модифікованих конфігураційних файлів.
+ Тригером для Github Actions є push до репозиторію зміненого конфігураційного файлу txt формата. Тригер реагує тільки на модифіковані , а не на нові файли. Розширення   файлу повинно бути формату txt, а не Txt, чи tXt. Назва файла конфігурації включена в назву проекту та назву віртуального середовища Python. Для коректного використання  Ansible потрібно налаштувати файл inventory - hosts.ini. Кількість розгорнутих видалених хостів дорівнює кількості модифікованих конфігураційних файлів.
  
  English
 The trigger for Github Actions is push to the repository of the modified txt format configuration file. The trigger only responds to modified, not new, files. The file extension must be txt, not Txt, or tXt. The configuration file name is included in the project name and the name of the Python virtual environment. To use Ansible correctly, you need to configure the inventory file - hosts.ini. The number of remote hosts deployed is equal to the number of modified configuration files.

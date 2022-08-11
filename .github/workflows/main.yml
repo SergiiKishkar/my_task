@@ -46,7 +46,7 @@ jobs:
           for val in $(cat $HOME/file_install_req_mod.json);
           do
           req_name_config=$(basename $val)
-          echo $req_name_config
+          echo "Running the configuration file - $req_name_config"
           req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
           # if file is .txt start ansible          

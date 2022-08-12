@@ -15,7 +15,7 @@
   
   - name: Install Python-venv
     ansible.builtin.apt:
-      name: python-venv3.8
+      name: python3.8-venv
       state: present
       update_cache: yes
     register: results

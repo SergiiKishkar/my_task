@@ -12,25 +12,15 @@
     register: output
   - debug: 
       var: output
-      
-  - name: Install Python-venv to /opt/python_venvs/
-    ansible.builtin.pip:
-      chdir: /opt/python_venvs
-      name: python-venv
-      state: present      
+  
+  - name: Install Python-venv
+    ansible.builtin.apt:
+      name: python-venv3.8
+      state: present
+      update_cache: yes
     register: results
   - debug: 
       var: results
-  
-  
-#  - name: Install Python-venv
-#    ansible.builtin.apt:
-#      name: python-venv3.8
-#      state: present
-#      update_cache: yes
-#    register: results
-#   - debug: 
-#      var: results
   
   - name: Install Python
     ansible.builtin.apt:

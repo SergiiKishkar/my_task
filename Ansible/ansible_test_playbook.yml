@@ -18,7 +18,7 @@
       name: python3-pip
       state: present
       update_cache: yes
-    register: results
+  #  register: results
   # - debug: 
   #    var: results
       
@@ -27,10 +27,16 @@
       name: ansible
       state: present
       update_cache: yes
-    register: results
+  #  register: results
   # - debug: 
   #    var: results  
        
+  - name: Creating folder new
+    file:
+      path: /home/test-project-{{ ans_name_conf }}
+      state: directory
+      mode: 0755
+    
   - name: Creating a project folder
     file:
       path: /home/runner/work/my_task/my_task/my_test/test-project-{{ ans_name_conf }}

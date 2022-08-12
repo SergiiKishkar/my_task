@@ -5,6 +5,8 @@
  create  3 params with file extension, environment name and configuration file name
  creates environments based on on changed files.
  
+During initial testing, it was noticed that the module failed to work correctly when renaming the configuration file directly in the repository. Error : There was an  issue sorting changed files from Github. You need to commit again with the configuration file name already changed.
+ 
  Українська
  
   Тригером для Github Actions є push до репозиторію зміненого конфігураційного файлу txt формата. Тригер реагує тільки на модифіковані , а не на нові файли. Розширення  файлу повинно бути формату txt, а не Txt, чи tXt. Назва файла конфігурації включена в назву проекту та назву віртуального середовища Python. Для коректного використання  Ansible потрібно налаштувати файл inventory - my_task/Ansible/hosts.ini. Кількість розгорнутих видалених хостів дорівнює кількості модифікованих конфігураційних файлів.

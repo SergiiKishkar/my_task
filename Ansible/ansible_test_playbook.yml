@@ -17,19 +17,19 @@
     ansible.builtin.apt:
       name: python3.8-venv
       state: present
-      update_cache: yes
+      update_cache: true
   
   - name: Install Python
     ansible.builtin.apt:
       name: python3-pip
       state: present
-      update_cache: yes
+      update_cache: true
       
   - name: Install Ansible
     ansible.builtin.apt:
       name: ansible
       state: present
-      update_cache: yes
+      update_cache: true
        
   - name: Creating a project folder
     file:
@@ -40,12 +40,14 @@
   - name: Copying a configuration file to a remote machine
     copy:
       src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt" 
-      dest: "/home/test-project-{{ ans_name_conf }}"
+      dest: "/opt/python_venvs"
+      # dest: "/home/test-project-{{ ans_name_conf }}"
       mode: 0555
       
   - name: Setting the working environment and dependencies
     shell: | 
-      cd /home/test-project-{{ ans_name_conf }}
+      cd /opt/python_venvs
+      # cd /home/test-project-{{ ans_name_conf }}
       python3 -m venv {{ ans_name_conf }}
       pip install -r {{ ans_name_conf }}.txt
     register: results

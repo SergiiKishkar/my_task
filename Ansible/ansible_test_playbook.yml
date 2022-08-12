@@ -13,12 +13,6 @@
   - debug: 
       var: output
   
-  - name: Install Python-venv
-    ansible.builtin.apt:
-      name: python3.8-venv
-      state: present
-      update_cache: true
-  
   - name: Install Python
     ansible.builtin.apt:
       name: python3-pip
@@ -31,11 +25,11 @@
       state: present
       update_cache: true
        
-  - name: Creating a project folder
-    file:
-      path: /home/test-project-{{ ans_name_conf }}
-      state: directory
-      mode: 0755
+  #- name: Creating a project folder
+  #  file:
+  #    path: /home/test-project-{{ ans_name_conf }}
+  #    state: directory
+  #    mode: 0755
       
   - name: Copying a configuration file to a remote machine
     copy:

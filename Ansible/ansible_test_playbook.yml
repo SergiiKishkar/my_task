@@ -16,7 +16,7 @@
   - name: Install Python-venv to /opt/python_venvs/
     ansible.builtin.pip:
       chdir /opt/python_venvs/
-      name: python3.8-venv
+      name: bottle
       state: present
       update_cache: yes
     register: results

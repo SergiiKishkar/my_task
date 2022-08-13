@@ -28,7 +28,6 @@
   - name: Creating a projects folder
     file:
       path: /opt/python_venvs
-      # path: /home/test-project-{{ ans_name_conf }}
       state: directory
       mode: 0755
       
@@ -36,7 +35,6 @@
     copy:
       src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
-      # dest: "/home/test-project-{{ ans_name_conf }}"
       mode: 0555
       
   - name: Setting the working environment and dependencies
@@ -47,5 +45,4 @@
     register: results
   - debug: 
       var: results
- # cd /home/test-project-{{ ans_name_conf }}
-...
+ ...

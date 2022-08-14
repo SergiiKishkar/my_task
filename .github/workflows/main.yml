@@ -61,7 +61,7 @@ jobs:
           if [ "$ext" == "txt" ]
           then
           echo "Starting Ansible...."
-          cd /home/runner/work/my_task/my_task/Ansible
+          cd GITHUB_WORKSPACE/Ansible
           ansible-playbook ansible_test_playbook.yml --extra-vars "ans_name_conf=$req_name"
           else
           echo "This is not configuration file"

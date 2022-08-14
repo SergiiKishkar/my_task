@@ -7,17 +7,17 @@
     ans_name_conf: "Python environment name without extension" 
         
   tasks:
-  - name: Install Python
-    ansible.builtin.apt:
-      name: python3-pip
-      state: present
-      update_cache: true
+#  - name: Install Python
+#    ansible.builtin.apt:
+#      name: python3-pip
+#      state: present
+#      update_cache: true
       
-  - name: Install Ansible
-    ansible.builtin.apt:
-      name: ansible
-      state: present
-      update_cache: true
+#  - name: Install Ansible
+#    ansible.builtin.apt:
+#      name: ansible
+#      state: present
+#      update_cache: true
        
   - name: Creating a projects folder
     file:
@@ -33,7 +33,7 @@
       
   - name: Copying a configuration file to a remote machine
     copy:
-      src: "{{ ans_path }}venvs/{{ ans_name_conf }}.txt" 
+      src: "{{ ans_path }}/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
       mode: 0555
       register: results

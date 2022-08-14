@@ -7,17 +7,17 @@
     ans_name_conf: "Python environment name without extension" 
         
   tasks:
-#  - name: Install Python
-#    ansible.builtin.apt:
-#      name: python3-pip
-#      state: present
-#      update_cache: true
+  - name: Install Python
+    ansible.builtin.apt:
+      name: python3-pip
+      state: present
+      update_cache: true
       
-#  - name: Install Ansible
-#    ansible.builtin.apt:
-#      name: ansible
-#      state: present
-#      update_cache: true
+  - name: Install Ansible
+    ansible.builtin.apt:
+      name: ansible
+      state: present
+      update_cache: true
        
   - name: Creating a projects folder
     file:

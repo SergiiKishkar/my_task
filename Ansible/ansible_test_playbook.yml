@@ -33,7 +33,7 @@
       
   - name: Copying a configuration file to a remote machine
     copy:
-      src: "{{ ans_path }}/venvs/{{ ans_name_conf }}.txt" 
+      src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
       mode: 0555
       register: results

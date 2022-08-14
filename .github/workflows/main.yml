@@ -23,6 +23,7 @@ jobs:
           output: 'json'
           # optional fileoutput format
           # fileOutput: 'csv'
+          path: /home/my_project
       - name: Detect # Detect modified and added files in the repository
         run: |
           cat $HOME/files.json

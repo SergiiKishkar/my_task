@@ -7,6 +7,12 @@
     ans_name_conf: "Python environment name without extension" 
         
   tasks:
+  - name: Ping test
+    ping:
+    register: output
+  -debug:
+    var: output
+    
   - name: Install Python
     ansible.builtin.apt:
       name: python3-pip

@@ -10,7 +10,7 @@
   - name: Ping test
     ping:
     register: output
-  -debug:
+  - debug:
     var: output
     
   - name: Install Python

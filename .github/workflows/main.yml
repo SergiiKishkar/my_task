@@ -23,7 +23,7 @@ jobs:
           output: 'json'
           # optional fileoutput format
           # fileOutput: 'csv'
-          path: /home/my_project
+          path: "/home/my_project"
       - name: Detect # Detect modified and added files in the repository
         run: |
           cat $HOME/files.json
@@ -32,7 +32,7 @@ jobs:
           echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
-          
+          ls -la /home/my_project
       - name: Starting Playbook
         env:
           ext: "Ext of file of configuration"

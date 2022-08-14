@@ -15,10 +15,11 @@ jobs:
     steps:
       - name: Git clone repository
         uses: actions/checkout@v3
-        with:
-          path: $HOME/my_project
+#        with:
+#          path: $HOME/my_project
+#      
       - name: Change Folders Repo
-        run: ls -la /home/my_project
+        run: echo $HOME
         
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3

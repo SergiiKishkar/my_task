@@ -23,10 +23,7 @@
     file:
       path: /opt/python_venvs
       state: directory
-      mode: 0755
-      register: results
-  - debug: 
-      var: results
+      mode: 0755    
     
   - name: Контроль передачи переменной в плейбук
     shell: echo {{ ans_path }}

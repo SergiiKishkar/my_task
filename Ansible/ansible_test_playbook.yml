@@ -11,7 +11,7 @@
     ping:
     register: output
   - debug:
-    var: output
+      var: output
     
   - name: Install Python
     ansible.builtin.apt:

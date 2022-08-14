@@ -36,7 +36,7 @@ jobs:
           echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
-          ls -la /home/my_project
+          
       - name: Starting Playbook
         env:
           ext: "Ext of file of configuration"

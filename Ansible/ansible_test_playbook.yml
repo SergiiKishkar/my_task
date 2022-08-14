@@ -26,7 +26,10 @@
       mode: 0755
     
   - name: Контроль передачи переменной в плейбук
-    shell: echo {{ ans_path }}     
+    shell: echo {{ ans_path }}
+    register: results
+  - debug: 
+      var: results
       
   - name: Copying a configuration file to a remote machine
     copy:

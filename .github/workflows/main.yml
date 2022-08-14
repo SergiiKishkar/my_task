@@ -69,4 +69,5 @@ jobs:
           fi
           done
           IFS=$Field_Separator
+          ls /opt/python_venvs/
          

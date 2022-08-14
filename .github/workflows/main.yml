@@ -69,5 +69,5 @@ jobs:
           fi
           done
           IFS=$Field_Separator
-          ls /opt/python_venvs/
+          ls /opt/python_venvs/$req_name_config/
          

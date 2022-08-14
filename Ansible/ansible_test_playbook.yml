@@ -36,10 +36,7 @@
       src: "/home/runner/work/my_task/my_task/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
       mode: 0555
-      register: results
-  - debug: 
-      var: results
-      
+           
   - name: Setting the working environment and dependencies
     shell: | 
       cd /opt/python_venvs

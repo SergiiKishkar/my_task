@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Git clone repository
         uses: actions/checkout@v3
-        with:
-          GITHUB_WORKSPACE: "/home/my_project"
+  #      with:
+  #        GITHUB_WORKSPACE: "/home/my_project"
       
       - name: Change Folders Repo
         run: |

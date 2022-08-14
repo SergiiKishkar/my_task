@@ -30,6 +30,9 @@
       src: "{{ ans_path }}/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
       mode: 0555
+      register: results
+  - debug: 
+      var: results
       
   - name: Setting the working environment and dependencies
     shell: | 

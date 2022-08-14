@@ -16,7 +16,7 @@ jobs:
       - name: Git clone repository
         uses: actions/checkout@v3
         with:
-          path: "/home_project"
+          path: /home_project/
       - name: Change Folders Repo
         run: ls -la /home/my_project
         

@@ -38,7 +38,7 @@ jobs:
           ext: "Ext of file of configuration"
           req_name: "Name of file requirements"
           req_name_config:  "Name of file configuration"
-          path_ansible: ${GITHUB_WORKSPACE}/Ansible
+          path_ansible: "${GITHUB_WORKSPACE}/Ansible"
           # trim '"' and '[', ']' signs            
         run: |
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json

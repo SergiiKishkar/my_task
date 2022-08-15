@@ -58,16 +58,16 @@ jobs:
           req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
           # if file is .txt start ansible          
-          if [ "$ext" == "txt" ]
-          then
+        # if [ "$ext" == "txt" ]
+        #  then
           echo "Starting Ansible...."
           cd $GITHUB_WORKSPACE/Ansible
           ls -la $GITHUB_WORKSPACE/Ansible
           ansible-playbook ansible_test_playbook.yml --extra-vars "ans_name_conf=$req_name ans_path=$GITHUB_WORKSPACE"
-          else
+        #  else
           echo "This is not configuration file"
-          fi
+        #  fi
           done
           IFS=$Field_Separator
-          ls /opt/python_venvs/$req_name/
+        # ls /opt/python_venvs/$req_name/
          

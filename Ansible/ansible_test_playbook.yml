@@ -6,13 +6,7 @@
   vars:
     ans_name_conf: "Python environment name without extension" 
         
-  tasks:
-  - name: Ping test
-    ping:
-    register: output
-  - debug:
-      var: output
-    
+  tasks: 
   - name: Install Python
     ansible.builtin.apt:
       name: python3-pip
@@ -29,13 +23,7 @@
     file:
       path: /opt/python_venvs
       state: directory
-      mode: 0755    
-    
-  - name: Контроль передачи переменной в плейбук
-    shell: echo {{ ans_path }}
-    register: results
-  - debug: 
-      var: results
+      mode: 0755  
       
   - name: Copying a configuration file to a remote machine
     copy:

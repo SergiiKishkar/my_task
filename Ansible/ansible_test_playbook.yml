@@ -6,7 +6,6 @@
   vars:
     ans_name_conf: "Python environment name without extension"
     path_dir_venvs: "{{ ans_path }}/venvs/" #Path to the folder with configuration files
-    path_dir_ansible: #Path to the folder with Ansible files
     path_dest_environment: /opt/python_venvs
         
   tasks: 
@@ -25,7 +24,6 @@
   - name: Creating a projects folder
     file:
       path: "{{ path_dest_environment }}"
-      # path: /opt/python_venvs
       state: directory
       mode: 0755  
       
@@ -33,7 +31,6 @@
     copy:
       src: "{{ path_dir_venvs }}{{ ans_name_conf }}.txt" 
       dest: "{{ path_dest_environment }}"
-      # dest: "/opt/python_venvs"
       mode: 0555
            
   - name: Setting the working environment and dependencies

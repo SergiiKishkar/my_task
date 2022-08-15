@@ -1,6 +1,6 @@
 ---
 - name: My Test Playbook
-  hosts: linux1
+  hosts: localhost
   become: true
 
   vars:

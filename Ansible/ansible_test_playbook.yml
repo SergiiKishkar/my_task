@@ -49,5 +49,5 @@
       python3 -m venv {{ ans_name_conf }}
       pip install -r {{ ans_name_conf }}.txt
     register: results
-  - debug: 
+  - debug:
       var: results

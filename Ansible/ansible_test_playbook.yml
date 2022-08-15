@@ -35,11 +35,12 @@
            
   - name: Setting the working environment and dependencies
     shell: | 
-      pwd
+      
       ls -lh
       cd {{ path_dest_environment }}
       python3 -m venv {{ ans_name_conf }}
       pwd
+      ls -lh
       ls -lh {{ ans_name_conf }}/bin/
       source {{ ans_name_conf }}/bin/activate
       pip install -r {{ ans_name_conf }}.txt

@@ -63,3 +63,4 @@ jobs:
           fi
           done
           IFS=$Field_Separator     
+          ls -lh opt/venvs/python30  

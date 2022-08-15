@@ -38,6 +38,7 @@ jobs:
           ext: "Ext of file of configuration"
           req_name: "Name of file requirements"
           req_name_config:  "Name of file configuration"
+          path_ansible: $GITHUB_WORKSPACE/Ansible
           # trim '"' and '[', ']' signs            
         run: |
           sed -e 's/\[//; s/\"//g; s/\]//g' $HOME/files_modified.json > $HOME/file_install_req_mod.json
@@ -54,7 +55,8 @@ jobs:
           if [ "$ext" == "txt" ]
           then
           echo "Starting Ansible...."
-          cd $GITHUB_WORKSPACE/Ansible
+          cd $path_ansible
+          # cd $GITHUB_WORKSPACE/Ansible
           ansible-playbook ansible_test_playbook.yml --extra-vars "ans_name_conf=$req_name ans_path=$GITHUB_WORKSPACE"
           else
           echo "This is not configuration file"

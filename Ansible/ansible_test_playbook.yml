@@ -7,6 +7,7 @@
     ans_name_conf: "Python environment name without extension"
     path_dir_venvs: "{{ ans_path }}/venvs/" #Path to the folder with configuration files
     path_dir_ansible: #Path to the folder with Ansible files
+    path_dest_environment: /opt/python_venvs
         
   tasks: 
   - name: Install Python
@@ -23,14 +24,14 @@
        
   - name: Creating a projects folder
     file:
-      path: /opt/python_venvs
+      path: "{{ path_dest_environment }}"
+      # path: /opt/python_venvs
       state: directory
       mode: 0755  
       
   - name: Copying a configuration file to a remote machine
     copy:
       src: "{{ path_dir_venvs }}{{ ans_name_conf }}.txt" 
-      #src: "{{ ans_path }}/venvs/{{ ans_name_conf }}.txt" 
       dest: "/opt/python_venvs"
       mode: 0555
            

@@ -35,6 +35,8 @@
            
   - name: Setting the working environment and dependencies
     shell: | 
+      pwd
+      ls -lh
       cd {{ path_dest_environment }}
       python3 -m venv {{ ans_name_conf }}
       pwd

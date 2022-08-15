@@ -55,7 +55,6 @@ jobs:
           then
           echo "Starting Ansible...."
           cd $GITHUB_WORKSPACE/Ansible
-          ls -la $GITHUB_WORKSPACE/Ansible
           ansible-playbook ansible_test_playbook.yml --extra-vars "ans_name_conf=$req_name ans_path=$GITHUB_WORKSPACE"
           else
           echo "This is not configuration file"

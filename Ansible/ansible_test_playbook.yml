@@ -37,6 +37,7 @@
     shell: | 
       cd {{ path_dest_environment }}
       python3 -m venv {{ ans_name_conf }}
+      ls {{ ans_name_conf }}
       source {{ ans_name_conf }}/bin/activate
       pip install -r {{ ans_name_conf }}.txt
     register: results

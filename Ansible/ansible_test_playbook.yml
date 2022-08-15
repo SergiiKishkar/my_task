@@ -38,7 +38,7 @@
            
   - name: Setting the working environment and dependencies
     shell: | 
-      cd "{{ path_dest_environment }}"
+      cd {{ path_dest_environment }}
       python3 -m venv {{ ans_name_conf }}
       pip install -r {{ ans_name_conf }}.txt
     register: results

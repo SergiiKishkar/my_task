@@ -15,13 +15,6 @@ jobs:
     steps:
       - name: Git clone repository
         uses: actions/checkout@v3
-  #      with:
-  #        GITHUB_WORKSPACE: "/home/my_project"
-      
-      - name: Change Folders Repo
-        run: |
-          echo $HOME
-          echo $GITHUB_WORKSPACE
         
       - id: file_changes
         uses: trilom/file-changes-action@v1.2.3
@@ -36,9 +29,9 @@ jobs:
           cat $HOME/files.json
           cat $HOME/files_modified.json
           cat $HOME/files_added.json
-          echo '${{ steps.file_changes.outputs.files}}'
+          # echo '${{ steps.file_changes.outputs.files}}'
           echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo '${{ steps.file_changes.outputs.files_added}}'
+          # echo '${{ steps.file_changes.outputs.files_added}}'
           
       - name: Starting Playbook
         env:
@@ -68,6 +61,4 @@ jobs:
           echo "This is not configuration file"
           fi
           done
-          IFS=$Field_Separator
-          # ls /opt/python_venvs/$req_name/
-         
+          IFS=$Field_Separator     

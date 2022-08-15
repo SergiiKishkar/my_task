@@ -57,7 +57,7 @@ jobs:
           echo "Running the configuration file - $req_name_config"
           req_name=${req_name_config%.*}
           ext=${req_name_config##*.}
-          if file is .txt start ansible          
+          # if file is .txt start ansible          
           if [ "$ext" == "txt" ]
           then
           echo "Starting Ansible...."

@@ -44,6 +44,7 @@
       cd {{ path_dest_environment }}
       echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
+      echo $SHELL
    # run source {{ ans_name_conf }}/bin/activate.csh
    # cd {{ ans_name_conf }}
       # ls -lh
@@ -57,7 +58,7 @@
   - name: run config
     ansible.builtin.command: 
       chdir: "{{ path_dest_environment }}"
-      cmd: source {{ ans_name_conf }}/bin/activate # ls -lh {{ ans_name_conf }}/bin 
+      cmd: ls -lh {{ ans_name_conf }}/bin/ # ls -lh {{ ans_name_conf }}/bin 
     register: command_output
   - name: command output
     ansible.builtin.debug:

@@ -38,7 +38,7 @@
       pkg install bash
       cd {{ path_dest_environment }}
       python3 -m venv {{ ans_name_conf }}
-      source python2.0/bin/activate
+      sudo source python2.0/bin/activate
       № source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate
       # source {{ ans_name_conf }}/bin/activate
       pip install -r {{ ans_name_conf }}.txt

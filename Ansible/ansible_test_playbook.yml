@@ -51,13 +51,13 @@
       # source {{ ans_name_conf }}/bin/activate
       # pip install -r {{ ans_name_conf }}.txt
       register: results
-    - debug:
-        var: results
+  - debug:
+      var: results
 
-   - name: Run the conf file
+  - name: Run the conf file
       command: 
       source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate
       # pip install -r {{ ans_name_conf }}.txt  
       register: results
-   - debug:
-       var: results
+  - debug:
+      var: results

@@ -44,7 +44,7 @@
       cd {{ path_dest_environment }}
       echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
-      run source {{ ans_name_conf }}/bin/activate.csh
+   # run source {{ ans_name_conf }}/bin/activate.csh
    # cd {{ ans_name_conf }}
       # ls -lh
       # source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate

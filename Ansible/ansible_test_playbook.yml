@@ -42,6 +42,8 @@
   - name: Setting the working environment and dependencies
     shell: | 
       cd {{ path_dest_environment }}
+      echo "path_dest_environment - {{ path_dest_environment }}"
+      echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
       cd {{ ans_name_conf }}
       ls -lh

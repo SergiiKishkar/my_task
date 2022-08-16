@@ -57,7 +57,7 @@
   - name: run config
     ansible.builtin.command: 
       chdir: "{{ path_dest_environment }}"
-      cmd: ls -lh {{ ans_name_conf }}/bin # source {{ ans_name_conf }}/bin/activate
+      cmd: source {{ ans_name_conf }}/bin/activate # ls -lh {{ ans_name_conf }}/bin 
     register: command_output
   - name: command output
     ansible.builtin.debug:

@@ -39,7 +39,7 @@
       echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
       echo $SHELL
-      source {{ ans_name_conf }}/bin/activate
+      /bin/sh -c {{ ans_name_conf }}/bin/activate
    # cd {{ ans_name_conf }}
       # ls -lh
       # source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate

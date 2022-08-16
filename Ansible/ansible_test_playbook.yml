@@ -15,11 +15,11 @@
       state: present
       update_cache: true
       
- # - name: Install Ansible
- #   ansible.builtin.apt:
- #     name: ansible
- #     state: present
- #     update_cache: true
+  - name: Install Ansible
+    ansible.builtin.apt:
+      name: ansible
+      state: present
+      update_cache: true
  
   - name: Creating a projects folder
     file:
@@ -38,14 +38,8 @@
       cd {{ path_dest_environment }}
       echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
-      echo $SHELL
       . {{ ans_name_conf }}/bin/activate
-   # /bin/sh -c {{ ans_name_conf }}/bin/activate
-   # cd {{ ans_name_conf }}
-      # ls -lh
-      # source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate
-      # source {{ ans_name_conf }}/bin/activate
-      # pip install -r {{ ans_name_conf }}.txt
+      pip install -r {{ ans_name_conf }}.txt
     register: results
   - debug:
       var: results
@@ -58,10 +52,3 @@
   - name: command output
     ansible.builtin.debug:
       var: command_output.stdout_lines
-
-  #- name: Run the conf file
-      #command: source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate
-      # pip install -r {{ ans_name_conf }}.txt  
-      #register: results
-  #- debug:
-      #var: results

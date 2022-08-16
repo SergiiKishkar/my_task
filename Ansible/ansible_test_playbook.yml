@@ -46,7 +46,7 @@
       python3 -m venv {{ ans_name_conf }}
       cd {{ ans_name_conf }}
       ls -lh
-      .source python33/bin/activate
+      .source {{ ans_name_conf }}/bin/activate
       # source {{ path_dest_environment }}/{{ ans_name_conf }}/bin/activate
       # source {{ ans_name_conf }}/bin/activate
       pip install -r {{ ans_name_conf }}.txt

@@ -38,7 +38,7 @@
       cd {{ path_dest_environment }}
       echo "ans_name_cohf - {{ ans_name_conf }}"
       python3 -m venv {{ ans_name_conf }}
-      source {{ ans_name_conf }}/bin/activate
+      . {{ ans_name_conf }}/bin/activate
       pip install -r {{ ans_name_conf }}.txt
     register: results
   - debug:
